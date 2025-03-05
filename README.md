@@ -8,4 +8,4 @@ Repo for demo idea, model, and code for ICT720 course of 2025
 
 ## Software models
 ### Sequence diagram
-![Sequence diagram of scan and record]("images/seq_diagram_scan_record.jpg")
+![Sequence diagram of scan and record](images/seq_diagram_scan_record.jpg)
