@@ -9,3 +9,44 @@ Repo for demo idea, model, and code for ICT720 course of 2025
 ## Software models
 ### Sequence diagram
 ![Sequence diagram of scan and record](images/seq_diagram_scan_record.jpg)
+
+## List of student projects
+1. [Bro - Hiking](https://github.com/miftahulaziz/ICT720-2025-TeamProject)
+   - Mr. Thitikorn Suwannapeng
+   - Mr. Natthanon Ratborirak
+   - Mr. Miftahul Aziz
+
+2. [Onii chan](https://github.com/ChutiponTri/ict720-project)
+   - Chutipon Trirattananurak
+   - Natthapol Sangkool
+   - Kazuma Yoshida
+
+3. [?](https://github.com/khangnkv/ict720_software_2025)
+   - Khang Vinh Khac Nguyen
+   - Tanagrid Rakwongrit
+   - Waritthorn Na Nagara
+     
+4. [?](https://github.com/Lihour21/ict720-porject-2025)
+   - Mr. Chananyu Kamolsuntron
+   - Mr. Intouch Wangtrakoondee
+   - Mr. Lihour San
+  
+5. [No valid link]()
+   - Nattapol TAPTIENG
+   - Sela VAN
+   - Yanavut CHAWAPHANTH
+  
+6. [?](https://github.com/Panharithchhom23/ICT720_RTN_Project2025)
+   - Puncharus Phongphitthongchai
+   - Panharith Chhom
+   - Piyapach Singto
+  
+7. [?](https://github.com/Rady909/Ict720_software_2025)
+   - Thanawin Ungkananuchat
+   - Sahatus Asawadilockchai
+   - Rady LY
+  
+8. [?](https://github.com/thanzawtoe888/ict720-project)
+   - Than Zaw Toe (SIIT,Thammasat)
+   - Narodom Yatnimit (KU)
+   - Duc Nhat Luong ( Institute of Science Tokyo)
