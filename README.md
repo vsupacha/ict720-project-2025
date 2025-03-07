@@ -21,7 +21,7 @@ Repo for demo idea, model, and code for ICT720 course of 2025
    - Natthapol Sangkool
    - Kazuma Yoshida
 
-3. [?](https://github.com/khangnkv/ict720_software_2025)
+3. [BabyCare+](https://github.com/khangnkv/ict720_software_2025)
    - Khang Vinh Khac Nguyen
    - Tanagrid Rakwongrit
    - Waritthorn Na Nagara
