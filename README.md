@@ -26,7 +26,7 @@ Repo for demo idea, model, and code for ICT720 course of 2025
    - Tanagrid Rakwongrit
    - Waritthorn Na Nagara
      
-4. [?](https://github.com/Lihour21/ict720-porject-2025)
+4. [Toilet paper](https://github.com/Lihour21/ict720-porject-2025)
    - Mr. Chananyu Kamolsuntron
    - Mr. Intouch Wangtrakoondee
    - Mr. Lihour San
