@@ -16,7 +16,7 @@ Repo for demo idea, model, and code for ICT720 course of 2025
    - Mr. Natthanon Ratborirak
    - Mr. Miftahul Aziz
 
-2. [Onii chan](https://github.com/ChutiponTri/ict720-project)
+2. [Onii chan - Development of Automation System for Wheelchair User](https://github.com/ChutiponTri/ict720-project)
    - Chutipon Trirattananurak
    - Natthapol Sangkool
    - Kazuma Yoshida
@@ -31,22 +31,22 @@ Repo for demo idea, model, and code for ICT720 course of 2025
    - Mr. Intouch Wangtrakoondee
    - Mr. Lihour San
   
-5. [No valid link]()
+5. [baby_observation](https://github.com/selavan/ict720_software_2025_TBD)
    - Nattapol TAPTIENG
    - Sela VAN
    - Yanavut CHAWAPHANTH
   
-6. [?](https://github.com/Panharithchhom23/ICT720_RTN_Project2025)
+6. [Automatic Machine Stop System for Workplace Safety](https://github.com/Panharithchhom23/ICT720_RTN_Project2025)
    - Puncharus Phongphitthongchai
    - Panharith Chhom
    - Piyapach Singto
   
-7. [?](https://github.com/Rady909/Ict720_software_2025)
+7. [ProdScan - AI-Based Product Identification System](https://github.com/Rady909/Ict720_software_2025)
    - Thanawin Ungkananuchat
    - Sahatus Asawadilockchai
    - Rady LY
   
-8. [?](https://github.com/thanzawtoe888/ict720-project)
+8. [Fitness Guys - health-tracking application](https://github.com/thanzawtoe888/ict720-project)
    - Than Zaw Toe (SIIT,Thammasat)
    - Narodom Yatnimit (KU)
    - Duc Nhat Luong ( Institute of Science Tokyo)
