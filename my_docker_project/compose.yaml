@@ -1,0 +1,32 @@
+services:
+    mqtt_app:
+        build: ./mqtt_app
+        depends_on:
+            - mosquitto
+            - mongo
+    rest_app:
+        build: ./rest_app
+        depends_on:
+            - mongo
+        ports:
+            - "5000:5000"
+    mosquitto:
+        image: eclipse-mosquitto
+        ports:
+            - "1883:1883"
+        volumes:
+            - ./mosquitto/config:/mosquitto/config
+            - ./mosquitto/data:/mosquitto/data
+            - ./mosquitto/log:/mosquitto/log
+    mongo:
+        image: mongo
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./mongo/data:/data/db
+            - ./mongo/init:/docker-entrypoint-initdb.d
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
+          MONGO_INITDB_DATABASE: taist_db
+    
