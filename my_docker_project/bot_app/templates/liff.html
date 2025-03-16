@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIFF Starter</title>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
+</head>
+<body>
+    <h1>Topic</h1>
+    <p id="name">Hello, world</p>
+    <button onclick="scan()">Scan QR Code</button>
+    <p id="scan_result"></p>
+
+    <script>
+        // function for scanning QR code
+        async function scan() {
+            document.getElementById("scan_result").innerText = "scanning...";
+            liff.scanCodeV2().then((result) => {
+                console.log(result);
+                document.getElementById("scan_result").innerText = result.value;
+            }).catch(err => {
+                console.log(err);
+            });
+        }
+
+        // function for initializing LIFF
+        async function init_liff() {
+            console.log({ liffId: "{{ liff_id }}" })
+            await liff.init({ liffId: "{{ liff_id }}" });
+            if (!liff.isLoggedIn()) {
+                liff.login();
+            } else {
+                const profile = await liff.getProfile();
+                const userId = profile.userId;
+                const accessToken = liff.getAccessToken();
+                console.log(profile);
+                console.log(userId);
+                console.log(accessToken);
+                document.getElementById("name").innerText = 'Hello, ' + profile.displayName;
+            }
+        }
+
+        init_liff();
+    </script>
+</body> 

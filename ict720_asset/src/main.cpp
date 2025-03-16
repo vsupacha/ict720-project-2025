@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <BLEDevice.h>
 #include <BLEAdvertising.h>
-#include <M5Stack.h>
+#include <M5Unified.h>
 
 // 
 void show_qr_code(String name) {
@@ -33,23 +33,23 @@ void loop() {
   if (M5.BtnA.wasPressed()) {
     // change broadcast name
     BLEDevice::stopAdvertising();
-    esp_ble_gap_set_device_name("Asset-1");
+    esp_ble_gap_set_device_name("Asset-A");
     BLEDevice::startAdvertising(); 
-    show_qr_code("Asset-1");
+    show_qr_code("Asset-A");
   }
   if (M5.BtnB.wasPressed()) {
     // change broadcast name
     BLEDevice::stopAdvertising();
-    esp_ble_gap_set_device_name("Asset-2");
+    esp_ble_gap_set_device_name("Asset-B");
     BLEDevice::startAdvertising(); 
-    show_qr_code("Asset-2");
+    show_qr_code("Asset-B");
   }
   if (M5.BtnC.wasPressed()) {
     // change broadcast name
     BLEDevice::stopAdvertising();
-    esp_ble_gap_set_device_name("Asset-3");
+    esp_ble_gap_set_device_name("Asset-C");
     BLEDevice::startAdvertising(); 
-    show_qr_code("Asset-3");
+    show_qr_code("Asset-C");
   }
   delay(100);
 }

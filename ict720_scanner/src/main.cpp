@@ -8,6 +8,17 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 
+// settings
+#define WIFI_SSID         "HA_demo"
+#define WIFI_PASSWD       "home_assistant"
+#define MQTT_BROKER       "192.168.137.1"
+#define MQTT_PORT         1883
+#define MQTT_CLIENT_ID    "supachai_sjkdwkfhkwjehglfukwqhg"
+// pattern ict720/<group>/<station>/<type>
+#define MQTT_TOPIC_BEAT   "ict720/supachai/esp32/beat"
+#define MQTT_TOPIC_DATA   "ict720/supachai/esp32/data"
+#define MQTT_TOPIC_CMD    "ict720/supachai/esp32/cmd"
+
 // function prototypes
 void on_message(char* topic, byte* payload, unsigned int length);
 
@@ -28,7 +39,7 @@ void setup() {
   delay(3000);
   // 1. init WiFi
   Serial.begin(9600);
-  WiFi.begin("HA_demo", "home_assistant");
+  WiFi.begin(WIFI_SSID, WIFI_PASSWD);
   while (WiFi.status() != WL_CONNECTED) {
     delay(100);
     Serial.print(".");
@@ -46,23 +57,17 @@ void setup() {
   pBLEScan->setWindow(99);  // less or equal setInterval value
 
   // 3. connect to MQTT broker
-  mqtt_client.setServer("192.168.137.1", 1883);
+  mqtt_client.setServer(MQTT_BROKER, MQTT_PORT);
   mqtt_client.setCallback(on_message);
-  mqtt_client.connect("supchai_sjkdwkfhkwjehglfukwqhg");
-  mqtt_client.subscribe("ict720/supachai/esp32/cmd");
+  mqtt_client.connect(MQTT_CLIENT_ID);
+  mqtt_client.subscribe(MQTT_TOPIC_CMD);
   Serial.println("Connected to MQTT broker");
 }
 
 void loop() {
   char payload[100];
-  doc.clear();
-  doc["millis"] = millis();
-  doc["mac"] = WiFi.macAddress().c_str();
-  doc["rssi"] = WiFi.RSSI();
-  doc["ip"] = WiFi.localIP().toString().c_str();
-  serializeJson(doc, payload);
-  mqtt_client.publish("ict720/supachai/esp32/beat", payload);
-  mqtt_client.loop();
+  int matched = 0;
+
   // scan for BLE devices
   BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
   Serial.printf("Found %d devices\n", foundDevices.getCount());
@@ -77,7 +82,7 @@ void loop() {
         doc["mac"] = device.getAddress().toString().c_str();
         doc["rssi"] = device.getRSSI();
         serializeJson(doc, payload);
-        mqtt_client.publish("ict720/supachai/esp32/data", payload);
+        mqtt_client.publish(MQTT_TOPIC_DATA, payload);
         mqtt_client.loop();
       } else {
         Serial.printf("Found device: %s\n", device.getName().c_str());
@@ -85,6 +90,16 @@ void loop() {
     } else {
       Serial.printf("Device without name: %s\n", device.getAddress().toString().c_str());
     }
+  }
+  if (matched == 0) {
+    doc.clear();
+    doc["millis"] = millis();
+    doc["mac"] = WiFi.macAddress().c_str();
+    doc["rssi"] = WiFi.RSSI();
+    doc["ip"] = WiFi.localIP().toString().c_str();
+    serializeJson(doc, payload);
+    mqtt_client.publish(MQTT_TOPIC_BEAT, payload);
+    mqtt_client.loop();  
   }
 }
 
