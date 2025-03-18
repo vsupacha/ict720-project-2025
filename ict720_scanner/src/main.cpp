@@ -13,11 +13,11 @@
 #define WIFI_PASSWD       "home_assistant"
 #define MQTT_BROKER       "192.168.137.1"
 #define MQTT_PORT         1883
-#define MQTT_CLIENT_ID    "supachai_sjkdwkfhkwjehglfukwqhg"
+#define MQTT_CLIENT_ID    "supachai_sjkdwkf"
 // pattern ict720/<group>/<station>/<type>
-#define MQTT_TOPIC_BEAT   "ict720/supachai/esp32/beat"
-#define MQTT_TOPIC_DATA   "ict720/supachai/esp32/data"
-#define MQTT_TOPIC_CMD    "ict720/supachai/esp32/cmd"
+#define MQTT_TOPIC_BEAT   "ict720/supachai/ESP32/beat"
+#define MQTT_TOPIC_DATA   "ict720/supachai/ESP32/data"
+#define MQTT_TOPIC_CMD    "ict720/supachai/ESP32/cmd"
 
 // function prototypes
 void on_message(char* topic, byte* payload, unsigned int length);

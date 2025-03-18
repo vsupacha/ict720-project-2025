@@ -115,7 +115,10 @@ def handle_text_message(event):
         if text.startswith('#'):
             req = requests.get(rest_station_api + text[1:])
             data = req.json()
-            resp_text = str(data['data'])
+            # return number of devices
+            count = len(data['data'])
+            resp_text = 'Number of devices: ' + str(count)
+            #resp_text = str(data['data'])            
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
