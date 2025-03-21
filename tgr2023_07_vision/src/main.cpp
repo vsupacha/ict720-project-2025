@@ -1,6 +1,6 @@
 #include "main.h"
 #include "hw_camera.h"
-#include <T-SIMCAM_inferencing.h>
+#include <ICT720-edge-vision_inferencing.h>
 #include "edge-impulse-sdk/dsp/image/image.hpp"
 
 // constants
@@ -52,6 +52,7 @@ void loop() {
       hw_camera_raw_snapshot(bmp_buf, &width, &height);
       elapsed_time = millis() - Tstart;
       ESP_LOGI(TAG, "Snapshot taken (%d) width: %d, height: %d", elapsed_time, width, height);
+
       print_memory();
       // prepare feature
       Tstart = millis();

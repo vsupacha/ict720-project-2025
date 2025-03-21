@@ -22,6 +22,16 @@ services:
             - "8000:8000"
         depends_on:
             - mongo
+    web_ui:
+        build: ./web_ui
+        env_file:
+            - .env
+        ports:
+            - "8501:8501"
+        depends_on:
+            - rest_app
+            - bot_app
+            - mqtt_app
     mosquitto:
         image: eclipse-mosquitto
         ports:
